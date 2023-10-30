@@ -38,7 +38,8 @@ def exercice3(note_path, thresholds_file_path, result_file_path):
         for note in notes_percent:
             for key, value in letter_grade_thresholds.items():
                 if value[0] <= int(note) < value[1]:
-                    result_file.write(note.strip() + " " + key + "\n")
+                    result_file.write(note.strip() + " " + key + "\n") # here the teacher uses strip() 
+                                                                       # because he didn't get rid of \n above with splilines()
                     break
 
 def exercice4(recipes_path):
@@ -88,10 +89,10 @@ if __name__ == '__main__':
     if not os.path.exists("output"):
         os.mkdir("output")
 
-    exercice1("data/exemple.txt", "data/exemple2.txt")
-    exercice2("data/exemple.txt", "output/exemple_copy.txt")
-    exercice3("data/notes.txt", "data/seuils.json", "output/notes_letter.txt")
-    exercice4("data/recettes.json")
+    #exercice1("data/exemple.txt", "data/exemple2.txt")
+    #exercice2("data/exemple.txt", "output/exemple_copy.txt")
+    #exercice3("data/notes.txt", "data/seuils.json", "output/notes_letter.txt")
+    #exercice4("data/recettes.json")
     print(exercice5("data/exemple.txt"))
     exercice6("data/notes.txt", "output/notes_skip.txt")
 
